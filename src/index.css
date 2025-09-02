@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-gray-900: #202225;
+    --color-gray-800: #2f3136;
+    --color-gray-700: #36393f;
+    --color-gray-600: #4f545c;
+    --color-gray-400: #d4d7dc;
+    --color-gray-300: #e3e5e8;
+    --color-gray-200: #ebedef;
+    --color-gray-100: #f2f3f5;
+    --color-green-500: #10b981;
+    --color-green-600: #0a9769;
+}
+
+@layer components {
+    .sidebar-icon {
+        @apply relative flex items-center justify-center
+        h-12 w-12 my-2 mx-auto shadow-lg
+        bg-gray-400 dark:bg-gray-800 text-green-500
+        hover:bg-green-600 dark:hover:bg-gray-800 hover:text-white
+        rounded-3xl hover:rounded-xl
+        transition-all duration-300 ease-linear
+        cursor-pointer;
+    }
+
+    .sidebar-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14
+        rounded-md shadow-md
+        text-white bg-gray-900
+        text-xs font-bold
+        transition-all duration-100 scale-0 origin-left;
+    }
+
+    .sidebar-divider {
+        @apply bg-gray-200 dark:bg-gray-800
+        border border-gray-200 dark:border-gray-800 rounded-full
+        mx-2;
+    }
+
+    .channel-bar {
+        @apply h-screen w-80 m-0 ml-16
+        flex flex-col
+        bg-gray-200 dark:bg-gray-800
+        overflow-hidden shadow-lg;
+    }
+
+    .channel-title-section {
+        @apply m-0 p-0 h-16 flex items-center justify-center;
+    }
+
+    .channel-title {
+        @apply text-xl font-bold
+        text-gray-600 dark:text-gray-400
+        tracking-wider my-auto mr-auto ml-4
+        align-middle;
+    }
+
+    .channel-container {
+        @apply m-1 h-auto flex flex-col 
+        items-start justify-items-start;
+    }
+
+    .dropdown {
+        @apply m-0 w-full pb-2 px-2
+        transition duration-300 ease-in-out;
+    }
+
+    .dropdown-header {
+        @apply flex flex-row 
+        items-center justify-center
+        mx-0  text-gray-500/80
+        cursor-pointer;
+    }
+
+    .dropdown-header-text {
+        @apply text-gray-500/90
+        text-lg font-semibold
+        cursor-default;
+    }
+
+    .dropdown-header-text-selected {
+        @apply text-blue-500/90
+        text-lg font-semibold
+        cursor-default;
+    }
+
+    .dropdown-option {
+        @apply flex flex-row w-full
+        hover:bg-gray-300 hover:text-gray-600
+        dark:hover:bg-gray-700 dark:hover:text-gray-400
+        pb-0.5 px-2.5;
+    }
+
+    .dropdown-option-text {
+        @apply text-gray-500/90 font-semibold cursor-pointer;
+    }
+
+    .chevron {
+        @apply mr-1 my-auto;
+    }
+
+    .top-navigation {
+        @apply flex flex-row
+        items-center justify-center
+        bg-gray-300/90 dark:bg-gray-700/90
+        w-full h-16
+        m-0
+        shadow-lg;
+    }
+
+    .top-navigation-icon {
+        @apply text-gray-500
+        mr-3 ml-4
+        transition duration-300 ease-in-out
+        hover:text-pink-400
+        cursor-pointer;
+    }
+
+    .top-navigation-icon:first {
+        @apply ml-auto mr-4;
+    }
+
+    .top-navigation-title {
+        @apply text-gray-500/80
+        font-semibold text-xl
+        ml-2
+        tracking-wider;
+    }
+
+    .top-navigation-hash {
+        @apply text-gray-500 font-semibold
+        tracking-wider ml-2 my-auto;
+    }
+
+    .top-navigation-divider {
+        @apply bg-gray-500/40
+        border border-gray-500/40 rounded-full
+        dark:bg-gray-600/40 dark:border-gray-500/40
+        h-[75%] min-w-0.5 dark:shadow-xl
+        ml-2;
+    }
+
+    .top-navigation-text {
+        @apply text-gray-500/90 dark:text-gray-400/80
+        font-semibold text-base
+        ml-2 mr-auto;
+    }
+
+    .search-bar {
+        @apply w-1/5 flex items-center justify-start 
+        bg-gray-400 dark:bg-gray-600
+        text-gray-500
+        px-2 h-9 ml-0 mr-0 
+        rounded-md shadow-md
+        transition duration-300 ease-in-out;
+    }
+
+    .content-window {
+        @apply relative w-full items-center
+        justify-center
+        bg-gray-300 dark:bg-gray-700
+        shadow-lg overflow-hidden;
+    }
+
+    .input-bar {
+        @apply fixed h-14 flex items-center
+        left-96 right-14
+        bottom-6
+        justify-start bg-gray-400
+        dark:bg-gray-600 text-gray-700
+        dark:text-gray-400/60 font-semibold
+        px-4 mx-auto mt-auto
+        rounded-md shadow-xl
+        transition duration-300 ease-in-out;
+    }
+}
