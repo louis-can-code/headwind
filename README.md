@@ -1,12 +1,33 @@
-# React + Vite
+# HeadWind Tailwindcss Tutorial
+ The tutorial video by Fireship that builds the sidebar component is available [here](https://youtu.be/pfaSUYaSgRo?si=zwBaQnSEXNQPfJDX).\
+ Fireship's code for the whole UI is available [here](https://github.com/fireship-io/tailwind-dashboard).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ## Building and Running
+ I have included a Dockerfile that will build an image that, when run, allows the UI to be viewed from localhost:5173\
+ To build on your own machine, run:\
+```
+$ git clone https://github.com/louis-can-code/headwind
+$ cd headwind
+$ docker build . -t "headwind"
+$ docker run -p 5173:5173 headwind
+```
+ You should now be able to see the project at localhost:5173 in your browser.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Dark and Light modes
+  + First visit uses browser preferences
+  + Can be changed by pressing the moon icon
+  + Subsequent visits will use the most recent mode the user was using
+  + Implemented through the useDarkMode hook and a custom CSS theme
 
-## Expanding the ESLint configuration
+- Dynamic UI
+  + Tailwind utility classes allow for easy-to-implement transitions
+  + Hover used for colour changes, tooltips, and transitions
+  + useState used to create expandable dropdown lists of channel discussions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Dark Mode
+![Screenshot of DarkMode](/dark-mode.png)
+
+### Light Mode
+![Screenshot of LightMode](/light-mode.png)
