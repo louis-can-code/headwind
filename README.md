@@ -17,7 +17,7 @@ $ docker run -p 5173:5173 headwind
 ## Features
 - Dark and Light modes
   + First visit uses browser preferences
-  + Can be changed by pressing the moon icon
+  + Can be changed by pressing the moon/sun icon
   + Subsequent visits will use the most recent mode the user was using
   + Implemented through the useDarkMode hook and a custom CSS theme
 
